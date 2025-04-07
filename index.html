@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduLearn - Biblioteca Inteligente</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1>EduLearn</h1>
+    <nav>
+      <ul>
+        <li><a href="#destaques">Destaques</a></li>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#pesquisa">Pesquisa</a></li>
+        <li><a href="#signconnect">SignConnect</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="destaques" class="carrossel">
+    <h2>Destaques</h2>
+    <div class="carrossel-container">
+      <div class="carrossel-item">
+        <img src="public/img/livro-dom-casmurro.jpg" alt="Dom Casmurro" />
+        <p><a href="public/pdf/dom-casmurro.pdf" target="_blank">Dom Casmurro</a></p>
+      </div>
+      <div class="carrossel-item">
+        <img src="public/img/documentario-historia.jpg" alt="Documentário História" />
+        <p><a href="public/videos/historia-do-brasil.mp4" target="_blank">Documentário: História do Brasil</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pesquisa">
+    <h2>Buscar na Biblioteca</h2>
+    <input type="text" id="busca" placeholder="Digite o nome do livro ou categoria" />
+    <button onclick="buscar()">Pesquisar</button>
+    <div id="resultados"></div>
+  </section>
+
+  <section id="categorias">
+    <h2>Categorias</h2>
+    <div class="categoria">
+      <h3>Romance</h3>
+      <ul>
+        <li><a href="public/pdf/dom-casmurro.pdf" target="_blank">Dom Casmurro</a></li>
+      </ul>
+    </div>
+    <div class="categoria">
+      <h3>Filosofia</h3>
+      <ul>
+        <li><a href="public/pdf/o-principe.pdf" target="_blank">O Príncipe - Maquiavel</a></li>
+      </ul>
+    </div>
+    <div class="categoria">
+      <h3>Didáticos - Português</h3>
+      <ul>
+        <li><a href="public/pdf/gramatica-portugues.pdf" target="_blank">Gramática de Português</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="signconnect">
+    <h2>SignConnect</h2>
+    <p>Tradução de Libras em tempo real para tornar o conteúdo acessível a todos.</p>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </section>
+
+  <section id="login">
+    <h2>Entrar / Criar Conta</h2>
+    <form onsubmit="return false;">
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+      <p>Ou <a href="#">crie sua conta</a></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 InovaTech - EduLearn. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="scripts/busca.js"></script>
+</body>
+</html>
